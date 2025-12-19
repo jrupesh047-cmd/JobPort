@@ -1,4 +1,4 @@
-import asynHandler from "../utils/asynHandler.js";
+import asynHandler from "../utils/asyncHandler.js";
 import User from "../models/user.model.js";
 import { createAccessToken, createRefreshToken } from "../utils/jwt.js";
 import jwt from "jsonwebtoken";
@@ -96,6 +96,12 @@ export const login = asynHandler(async (req, res) => {
 //Verifying RefreshToken
 
 export const verifyToken = asynHandler(async (req, res) => {
+  if(!req.body)
+  {
+    return res.status(500).json({
+      message:"Not Find the RefersToken"
+    })
+  }
   const clientToken = req.body.refreshToken;
 
   //Checking the token is there

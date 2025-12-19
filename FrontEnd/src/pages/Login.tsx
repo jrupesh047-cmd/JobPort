@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LogIn } from 'lucide-react';
 import { useStore } from '../store';
-import { dummyUsers } from '../data';
-
+import api from '../api/axios';
 function Login() {
   const navigate = useNavigate();
   const isDarkMode = useStore((state) => state.isDarkMode);
@@ -13,17 +12,30 @@ function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const user = dummyUsers.find(u => u.email === email);
-    
-    if (user) {
-      setCurrentUser(user);
-      navigate(`/${user.role}/dashboard`);
-    } else {
-      setError('Invalid credentials');
-    }
-  };
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setError("");
+
+  try {
+    const res = await api.post("/auth/login", {
+      email,
+      password,
+    });
+
+    localStorage.setItem("accessToken", res.data.accessToken);
+    localStorage.setItem("user", JSON.stringify(res.data.user));
+    setCurrentUser(res.data.user);
+    navigate(
+      res.data.user.role === "employer"
+        ? "/employer/dashboard"
+        : "/jobseeker/dashboard"
+    );
+  } catch (error: any) {
+    setError(error.response?.data?.message || "Login failed");
+  }
+  
+};
+
 
   return (
     <div className="max-w-md mx-auto">

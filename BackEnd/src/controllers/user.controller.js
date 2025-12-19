@@ -1,4 +1,4 @@
-import asyncHandler from "../utils/asynHandler.js";
+import asyncHandler from "../utils/asyncHandler.js";
 import User from "../models/user.model.js";
 export const getAllUser = asyncHandler(async (req, res) => {
   const users = await User.find().select("-password -refreshToken");

@@ -2,11 +2,45 @@
 
 ## 📌 Overview
 
-This project serves as a **starter template** for building a **fully functional Job Portal** using the **MERN (MongoDB, Express.js, React, Node.js) stack**.
+-This is a Job Portal backend application built using the MERN stack.
+ It supports role-based authentication for Employers and Job Seekers,
+ job postings, and job applications.
 
-Candidates are expected to implement **both frontend and backend features** to deliver a **complete** job portal web application.
-
+## Feature
+### 🔐 Authentication & Authorization
+- User registration and login using JWT
+- Role-based access control (Employer / Job Seeker)
+- Protected routes using middleware
 ---
+### 📄 Job Applications
+- Job seekers can apply for jobs
+- Employers can view applicants for their jobs
+- Job seekers can view applied jobs
+
+## ⚙️ Setup Instructions
+
+1. Clone the repository
+```bash
+git clone <repo-url>
+2. Install dependencies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 🎯 Assessment Tasks
 
@@ -46,3 +80,14 @@ Candidates are expected to implement **both frontend and backend features** to d
 4. **Submit the live link** along with the **repository link**.
 
 ---
+
+Employe
+{
+"email": "employer@test.com",
+"password": "123456"
+}
+JobSeeker
+{
+"email": "jobseeker@test.com",
+"password": "123456"
+}

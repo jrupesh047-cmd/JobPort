@@ -1,4 +1,4 @@
-import asyncHandler from "../utils/asynHandler.js";
+import asyncHandler from '../utils/asyncHandler.js';
 const role = (...roles) =>
   asyncHandler(async (req, res, next) => {
     const userRole = req.user.role;
