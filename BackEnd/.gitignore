@@ -1,0 +1,25 @@
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+dist/
+build/
+logs/
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+coverage/
+tmp/
+temp/
