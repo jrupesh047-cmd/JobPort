@@ -102,8 +102,8 @@ This is a **full-stack Job Portal application** built using the **MERN stack (Mo
 - GET /api/v1/applications/me
 
 🌍 Deployment
-- Frontend: Vercel
-- Backend: Render
+- Frontend: https://job-port-opal.vercel.app
+- Backend: https://job-portal-backend.onrender.com
 - Database: MongoDB Atlas
 
 👥 User Roles
